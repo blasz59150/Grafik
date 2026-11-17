@@ -1,10 +1,13 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.plugin.compose")
 }
+
 android {
     namespace = "pl.sparta.kalendarz"
     compileSdk = 35
+
     defaultConfig {
         applicationId = "pl.sparta.kalendarz"
         minSdk = 26
@@ -12,9 +15,12 @@ android {
         versionCode = 1
         versionName = "0.1-test"
     }
-    buildFeatures { compose = true }
-    composeOptions { kotlinCompilerExtensionVersion = "2.0.21" }
+
+    buildFeatures {
+        compose = true
+    }
 }
+
 dependencies {
     implementation(platform("androidx.compose:compose-bom:2024.12.01"))
     implementation("androidx.activity:activity-compose:1.10.0")
@@ -23,5 +29,6 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material:material-icons-extended")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
+
     debugImplementation("androidx.compose.ui:ui-tooling")
 }
