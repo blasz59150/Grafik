@@ -27,8 +27,8 @@ jobs:
           gradle-version: '8.9'
 
       - name: Build debug APK
-        run: gradle assembleDebug
-
+        run: gradle --version && gradle assembleDebug 
+  
       - uses: actions/upload-artifact@v4
         with:
           name: Grafik-debug-apk
